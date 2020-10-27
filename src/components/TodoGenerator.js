@@ -11,7 +11,7 @@ class TodoGenerator extends Component {
   isTodoEmpty = (text) => {
     return text === "";
   }
-  
+
   onSubmit = (event) => {
     event.preventDefault();
     const text = event.target.todoInput.value;
@@ -27,6 +27,7 @@ class TodoGenerator extends Component {
     const id = uuidv4();
     const todo = { id, text, done: false };
     this.props.addTodo(todo);
+    event.target.todoInput.value = "";
   }
 
   render() {
