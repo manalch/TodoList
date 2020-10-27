@@ -8,8 +8,8 @@ class TodoItem extends Component {
     }
     return (
       <div id="todoItem" onClick={() => this.props.changeStatus(this.props.todo.id)}>
-        <span style={style}>{this.props.todo.text}</span>
-        <span onClick={() => this.props.deleteTodo(this.props.todo.id)}>X</span>
+        <span style={style} className="col-92">{this.props.todo.text}</span>
+        <span className="col-8" onClick={() => this.props.deleteTodo(this.props.todo.id)}><span id="deleteIcon">X</span></span>
       </div>
     );
   }
