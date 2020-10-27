@@ -1,38 +1,87 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+body{
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.col-92::selection,.col-8::selection,#deleteIcon::selection {
+  color: none;
+  background: none;
+}
+#appName{
+  color:white;
+}
+
+#todoInput{
+  background-color: #282c34;
+  border : none;
   color: white;
+  text-align : center;
+  height: 30px;
+  border-bottom: 1px solid white;
+  font-size: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+input#todoInput:focus, #todoItem:focus{
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#todoSubmit {
+  border: none;
+  color: white;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 50px;
+  margin-left: 32px;
+  margin-bottom: 10px;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  transition: text-shadow 0.3s ease;
+  background-color: #19698C;
+  border-color: #384B64;
+}
+
+#todoSubmit:hover, #todoItem:hover{
+  cursor: pointer;
+}
+
+#todoItem{
+  color:white;
+  border:white;
+  width : 500px;
+  margin: auto;
+  border: 2px solid white;
+  height : 35px;
+  margin-bottom: 5px;
+  text-align:left;
+  padding-left: 10px;
+}
+
+.col-8 {
+  background-color: salmon;
+  border-color: rgb(150,120,120);
+  float: left;
+  width: 8%;
+  text-align:center;
+  height : 100%;
+}
+
+.col-92 {
+  float: left;
+  width: 92%;
+  margin-top: 6px;
+  outline:none;
+}
+
+#deleteIcon{
+  /* display: inline-block;
+  padding-top:-10px;
+  width: 100%;
+  height : 100%;
+  line-height: 100%; */
+  /* align-content: center; */
+  position:relative;
+  top: 4.5px;
+  /* display:flex; */
 }
