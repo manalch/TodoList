@@ -6,6 +6,10 @@ const mapDispatchToProps = dispatch => ({
   addTodo: (todo) => { dispatch(addTodo(todo)) }
 });
 
-const TodoGeneratorContainer = connect(null, mapDispatchToProps)(TodoGenerator);
+const mapStateToProps = state =>({
+  todos : state.todos
+})
+
+const TodoGeneratorContainer = connect(mapStateToProps, mapDispatchToProps)(TodoGenerator);
 
 export default TodoGeneratorContainer;
