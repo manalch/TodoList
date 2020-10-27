@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class TodoGenerator extends Component {
 
@@ -16,14 +18,22 @@ class TodoGenerator extends Component {
     event.preventDefault();
     const text = event.target.todoInput.value;
     if (this.isTodoEmpty(text)) {
-      alert("Empty Input!");
+      toast.error("Empty Input!", {
+        position: "top-center",
+        autoClose: 1000,
+        closeOnClick: true
+      });
       return;
     }
     if (this.isTodoExist(text)) {
-      alert(text + " is already existing.");
-
+      toast.error(text + " already exist!", {
+        position: "top-center",
+        autoClose: 1500,
+        closeOnClick: true
+      });
       return;
     }
+
     const id = uuidv4();
     const todo = { id, text, done: false };
     this.props.addTodo(todo);
@@ -39,6 +49,7 @@ class TodoGenerator extends Component {
             <input type="submit" value="Add Item" id="todoSubmit" />
           </span>
         </form>
+        <ToastContainer />
       </div>
     );
   }
