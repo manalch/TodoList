@@ -9,6 +9,9 @@ const todos = (state = [], action) => {
       const todos = state.filter(todo => todo.id !== action.payload);
       return todos;
 
+    case "CHANGE_STATUS":
+      return state.map(todo => todo.id === action.payload ? { ...todo, done: !todo.done } : todo);
+
     default:
       return state;
   }
