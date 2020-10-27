@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 class TodoItem extends Component {
 
   render() {
+
+    const todoIsDone = this.props.todo.done;
+
     const style = {
-      textDecoration: this.props.todo.done ? 'line-through' : ''
+      textDecoration: todoIsDone ? 'line-through' : '',
+      color: todoIsDone ? 'gray' : 'white'
     }
     return (
       <div id="todoItem" onClick={() => this.props.changeStatus(this.props.todo.id)}>
