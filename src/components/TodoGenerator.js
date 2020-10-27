@@ -18,7 +18,7 @@ class TodoGenerator extends Component {
         <form onSubmit={this.onSubmit}>
           <span>
             <input type="text" name="todoInput" id="todoInput" />
-            <input type="submit" value="Add Item" />
+            <input type="submit" value="Add Item" id="todoSubmit"/>
           </span>
         </form>
       </div>
