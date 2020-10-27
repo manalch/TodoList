@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import TodoItem from './TodoItem';
+import TodoItemContainer from '../containers/TodoItemContainer';
 
 class TodoGroup extends Component {
   render() {
     const todos = this.props.todos.map((todo) => (
-      <TodoItem key={todo.id} todo={todo} />
+      <TodoItemContainer key={todo.id} todo={todo} />
     ));
     return (
       <div>
