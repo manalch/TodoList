@@ -6,10 +6,13 @@ class TodoGenerator extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     const text = event.target.todoInput.value;
-    const id = uuidv4();
-    const todo = { id, text, done: false };
-
-    this.props.addTodo(todo);
+    if(text !== ""){
+      const id = uuidv4();
+      const todo = { id, text, done: false };
+      this.props.addTodo(todo);
+    }else{
+      alert("Empty Input!");
+    }
   }
 
   render() {
