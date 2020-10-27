@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class TodoItem extends Component {
   render() {
     return (
-        <div id="todoItem">Lorem Ipsum <span>X</span></div>
+      <div id="todoItem">{this.props.todo.text}<span>X</span></div>
     );
   }
 }
