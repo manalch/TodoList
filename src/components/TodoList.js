@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoGenerator from './TodoGenerator';
+import TodoGeneratorContainer from '../containers/TodoGeneratorContainer';
 import TodoGroup from './TodoGroup';
 
 class TodoList extends Component {
@@ -8,7 +8,7 @@ class TodoList extends Component {
       <div>
         <h1>TodoList</h1>
         <TodoGroup/>
-        <TodoGenerator/>
+        <TodoGeneratorContainer/>
       </div>
     );
   }
