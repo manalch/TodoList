@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-import {deleteTodo, getTodos} from '../apis/todo';
+import {deleteTodo, getTodos, updateTodo } from '../apis/todo';
 
 
 class TodoItem extends Component {
@@ -10,24 +10,27 @@ class TodoItem extends Component {
 
     const todoIsDone = this.props.todo.done;
 
-    // const onClick = () => {
-    //   this.props.changeStatus(this.props.todo.id);
-    //   if (this.props.todo.done) {
-    //     toast.error(this.props.todo.text + " is marked as unfinished.", {
-    //       autoClose: 1500,
-    //       closeOnClick: true
-    //     });
-    //   } else {
-    //     toast.success(this.props.todo.text + " is marked as finished.", {
-    //       autoClose: 1500,
-    //       closeOnClick: true
-    //     });
-    //   }
-    // }
-
     const onClick = () => {
-
-    } 
+      const { id, done } = this.props.todo;
+      updateTodo(id, !done).then(response => {
+        getTodos().then(response => {
+          this.props.getTodos(response.data);
+          if (this.props.todo.done) {
+            alert(this.props.todo.text + " is marked as unfinished.");
+            // toast.error(this.props.todo.text + " is marked as unfinished.", {
+            //   autoClose: 1500,
+            //   closeOnClick: true
+            // });
+          } else {
+            alert(this.props.todo.text + " is marked as finished.");
+            // toast.success(this.props.todo.text + " is marked as finished.", {
+            //   autoClose: 1500,
+            //   closeOnClick: true
+            // });
+          }
+        });
+      });
+    }
 
     const onDelete = (id) => {
       deleteTodo(id).then(response => {
