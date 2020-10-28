@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { addTodo } from '../apis/todo';
 
 class TodoGenerator extends Component {
 
@@ -36,8 +37,11 @@ class TodoGenerator extends Component {
 
     const id = uuidv4();
     const todo = { id, text, done: false };
-    this.props.addTodo(todo);
-    event.target.todoInput.value = "";
+
+    addTodo(text).then(response => {
+      this.props.addTodo(response.data);
+      event.target.todoInput.value = "";
+    });
   }
 
   render() {
