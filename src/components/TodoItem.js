@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
+import {deleteTodo, getTodos} from '../apis/todo';
+
 
 class TodoItem extends Component {
 
@@ -23,11 +25,16 @@ class TodoItem extends Component {
       }
     }
 
-    const onDelete = () => {
-      this.props.deleteTodo(this.props.todo.id);
-      toast.success("Successfully removed " + this.props.todo.text + ".", {
-        autoClose: 1500,
-        closeOnClick: true
+    const onDelete = (id) => {
+      // this.props.deleteTodo(this.props.todo.id);
+      deleteTodo(id).then(response => {
+        getTodos().then(response => {
+          this.props.getTodos(response.data);
+          toast.success("Successfully removed " + this.props.todo.text + ".", {
+            autoClose: 1500,
+            closeOnClick: true
+          });
+        })
       });
     }
 
@@ -39,7 +46,7 @@ class TodoItem extends Component {
       <div>
         <div id="todoItem">
           <span style={style} className="col-92" onClick={onClick}>{this.props.todo.text}</span>
-          <span className="col-8" onClick={onDelete}><span id="deleteIcon">X</span></span>
+          <span className="col-8" onClick={() => onDelete(this.props.todo.id)}><span id="deleteIcon">X</span></span>
         </div>
         <ToastContainer />
       </div>
