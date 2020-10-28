@@ -9,3 +9,7 @@ export const addTodo = (text) => {
         text
     });
 }
+
+export const deleteTodo = (id) => {
+    return api.delete("/api/todos/" + id);
+}
