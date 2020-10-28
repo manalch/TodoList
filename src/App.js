@@ -1,7 +1,7 @@
 import './App.css';
-import TodoList from './components/TodoList';
 import DoneListContainer from './containers/DoneListContainer';
 import {HashRouter, BrowserRouter, Route, Link, Switch} from 'react-router-dom';
+import TodoListContainer from './containers/TodoListContainer';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route path="/done" component={DoneListContainer} />
-            <Route path="/" component={TodoList} />
+            <Route path="/" component={TodoListContainer} />
           </Switch>
         </BrowserRouter>
       </header>
