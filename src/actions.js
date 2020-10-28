@@ -1,5 +1,5 @@
-export const addTodo = (todo) => {
-  return { type: "ADD_TODO", payload: todo };
+export const addTodo = text => {
+  return { type: "ADD_TODO", payload: text };
 }
 
 export const deleteTodo = (id) => {
