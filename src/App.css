@@ -12,6 +12,13 @@ body{
   color:white;
 }
 
+.white {
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+}
 #todoInput{
   background-color: #282c34;
   border : none;
