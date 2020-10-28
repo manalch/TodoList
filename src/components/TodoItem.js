@@ -10,20 +10,24 @@ class TodoItem extends Component {
 
     const todoIsDone = this.props.todo.done;
 
+    // const onClick = () => {
+    //   this.props.changeStatus(this.props.todo.id);
+    //   if (this.props.todo.done) {
+    //     toast.error(this.props.todo.text + " is marked as unfinished.", {
+    //       autoClose: 1500,
+    //       closeOnClick: true
+    //     });
+    //   } else {
+    //     toast.success(this.props.todo.text + " is marked as finished.", {
+    //       autoClose: 1500,
+    //       closeOnClick: true
+    //     });
+    //   }
+    // }
+
     const onClick = () => {
-      this.props.changeStatus(this.props.todo.id);
-      if (this.props.todo.done) {
-        toast.error(this.props.todo.text + " is marked as unfinished.", {
-          autoClose: 1500,
-          closeOnClick: true
-        });
-      } else {
-        toast.success(this.props.todo.text + " is marked as finished.", {
-          autoClose: 1500,
-          closeOnClick: true
-        });
-      }
-    }
+
+    } 
 
     const onDelete = (id) => {
       deleteTodo(id).then(response => {
