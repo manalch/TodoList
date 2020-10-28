@@ -26,7 +26,6 @@ class TodoItem extends Component {
     }
 
     const onDelete = (id) => {
-      // this.props.deleteTodo(this.props.todo.id);
       deleteTodo(id).then(response => {
         getTodos().then(response => {
           this.props.getTodos(response.data);
