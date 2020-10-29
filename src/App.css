@@ -1,94 +1,85 @@
-.App {
+body {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(#7155B1, #201733);
   text-align: center;
 }
-body{
-  background-color: #282c34;
-}
-.col-92::selection,.col-8::selection,#deleteIcon::selection {
-  color: none;
-  background: none;
-}
-#appName{
-  color:white;
-}
-
-.white {
-  color: white;
+.app-layout {
+  background: #EEE;
+  text-align: center;
+  height: 80vh;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  box-shadow: 1px 1px 15px #111;
 }
 
-.link {
-  text-decoration: none;
-}
-#todoInput{
-  background-color: #282c34;
-  border : none;
-  color: white;
-  text-align : center;
-  height: 30px;
-  border-bottom: 1px solid white;
-  font-size: 25px;
+.app {
+  padding-top: 10vh;
 }
 
-input#todoInput:focus, #todoItem:focus{
-  outline: none;
+.menu-class {
+  background: #fd9047;
+  border-bottom-color: #fd9047;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-#todoSubmit {
-  border: none;
-  color: white;
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 8px 50px;
-  margin-left: 32px;
-  margin-bottom: 10px;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  transition: text-shadow 0.3s ease;
-  background-color: #19698C;
-  border-color: #384B64;
-}
-
-#todoSubmit:hover, #todoItem:hover{
-  cursor: pointer;
-}
-
-#todoItem{
-  color:white;
-  border:white;
-  width : 500px;
-  margin: auto;
-  border: 2px solid white;
-  height : 35px;
-  margin-bottom: 5px;
-  text-align:left;
-  padding-left: 10px;
-}
-
-.col-8 {
-  background-color: salmon;
-  border-color: rgb(150,120,120);
+.todo-generator {
+  padding-top: 20px;
   float: left;
-  width: 8%;
-  text-align:center;
-  height : 100%;
+  background: #201733;
+  width: 40%;
+  height: 75vh;
+  border-bottom-left-radius: 5px;
 }
 
-.col-92 {
-  float: left;
-  width: 92%;
-  margin-top: 6px;
-  outline:none;
+.input-class {
+  padding: 20px;
+  text-align: right;
 }
 
-#deleteIcon{
-  /* display: inline-block;
-  padding-top:-10px;
-  width: 100%;
-  height : 100%;
-  line-height: 100%; */
-  /* align-content: center; */
-  position:relative;
-  top: 4.5px;
-  /* display:flex; */
+.button-class {
+  background: #fd9047;
+  color: #201733;
+  border-radius: 5px;
+  border-color: #201733;
+  width: 100px;
+  height: 40px;
+}
+
+.white-color {
+  color: white;
+}
+
+.created-todo-class {
+  background: #FFF;
+  height: 40px;
+  margin: 10px;
+  text-align: left;
+  border-radius: 5px;
+  color: #201733;
+  font-size: 15px;
+  vertical-align:auto;
+  box-shadow: 1px 1px 3px #111;
+  padding: 8px;
+}
+
+.delete-todo-class {
+  float: right;
+}
+
+.todo-group-container {
+  height: 75vh;
+  overflow-y: auto;
+}
+
+.todo-group-container::-webkit-scrollbar {
+  display: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #FFF;
 }

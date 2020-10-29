@@ -7,7 +7,7 @@ class TodoItemView extends Component {
     return (
       <div>
         <div id="todoItem">
-          <span className="col-92">{this.props.todo.text}</span>
+          <span>{this.props.todo.text}</span>
         </div>
       </div>
     );

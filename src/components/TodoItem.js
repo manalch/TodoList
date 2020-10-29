@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {deleteTodo, getTodos, updateTodo } from '../apis/todo';
-
+import { deleteTodo, getTodos, updateTodo } from '../apis/todo';
+import { DeleteOutlined } from '@ant-design/icons';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 class TodoItem extends Component {
 
@@ -14,9 +16,15 @@ class TodoItem extends Component {
         getTodos().then(response => {
           this.props.getTodos(response.data);
           if (this.props.todo.done) {
-            alert(this.props.todo.text + " is marked as unfinished.");
+            toast.success(this.props.todo.text + " is done.", {
+              autoClose: 1500,
+              closeOnClick: true
+            });
           } else {
-            alert(this.props.todo.text + " is marked as finished.");
+            toast.error(this.props.todo.text + " is undone.", {
+              autoClose: 1500,
+              closeOnClick: true
+            });
           }
         });
       });
@@ -26,20 +34,24 @@ class TodoItem extends Component {
       deleteTodo(id).then(response => {
         getTodos().then(response => {
           this.props.getTodos(response.data);
-          alert("Successfully removed " + this.props.todo.text + ".");
+          toast.success("deleted.", {
+            autoClose: 1500,
+            closeOnClick: true
+          });
         })
       });
     }
 
     const style = {
-      textDecoration: todoIsDone ? 'line-through' : '',
-      color: todoIsDone ? 'gray' : 'white'
+      background: todoIsDone ? '#DDD' : '#FFF',
+      color: todoIsDone ? '#888' : '#201733'
     }
+
     return (
-      <div>
-        <div id="todoItem">
-          <span style={style} className="col-92" onClick={onClick}>{this.props.todo.text}</span>
-          <span className="col-8" onClick={() => onDelete(this.props.todo.id)}><span id="deleteIcon">X</span></span>
+      <div className="main-container-item">
+        <div className="created-todo-class" style={style}>
+          <span onClick={onClick}>{this.props.todo.text}</span>
+          <span className="delete-todo-class" onClick={() => onDelete(this.props.todo.id)}><DeleteOutlined /></span>
         </div>
       </div>
     );

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import TodoGeneratorContainer from '../containers/TodoGeneratorContainer';
 import TodoGroupContainer from '../containers/TodoGroupContainer';
-import {Link } from 'react-router-dom';
-import {getTodos} from '../apis/todo';
+import { getTodos } from '../apis/todo';
 
 class TodoList extends Component {
   componentDidMount() {
@@ -13,11 +12,15 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <h1 id="appName">TodoList</h1>
-        <Link to="/done" className="white link">done</Link>
-        <TodoGeneratorContainer/>
-        <TodoGroupContainer/>
-      </div>
+        <div className="todo-generator">
+          <h1><b>TODOLIST</b>Generator</h1 >
+          <h4><i>Listing all the todos in your life</i></h4>
+          <TodoGeneratorContainer />
+        </div>
+        <div className="todo-group-container">
+          <TodoGroupContainer />
+        </div>
+      </div >
     );
   }
 }
